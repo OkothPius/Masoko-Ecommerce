@@ -1,0 +1,37 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+    <title>Masoko - {{title}} </title>
+    {% else %}
+    <title>Masoko ShopIt</title>
+    {% endif %}
+
+    {% block styles%}
+      {% bootstrap_css %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% endblock %}  
+
+</head>
+<body>
+    
+<p>
+    <a href="{% url 'index' %}">All Products</a>
+    <a href="{% url 'show_cart' %}">Cart: {{ cart_item_count }} item</a>
+</p>
+
+{% block content %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ {% bootstrap_javascript %}
+{% endblock %}
+</body>
+</html>
