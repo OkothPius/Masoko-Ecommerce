@@ -14,5 +14,6 @@ To install the project follow these steps:
 1. `cd django_project/`
 1. `python manage.py migrate`
 1. `python manage.py runserver`
+1. `bingo!!!`
 
 
