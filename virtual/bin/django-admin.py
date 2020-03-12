@@ -1,4 +1,4 @@
-#!/home/oruko/Desktop/SCO_303/Masoko/virtual/bin/python
+#!/home/david/Desktop/Masoko-Ecommerce/virtual/bin/python
 from django.core import management
 
 if __name__ == "__main__":
