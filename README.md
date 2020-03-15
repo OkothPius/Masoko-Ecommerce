@@ -7,10 +7,10 @@ An extremely elegant ecommerce application written in Django.
 
 ## Built with
 * [django](https://www.djangoproject.com/download/) - The web-backend framework used
-* [django-paypal] (https://django-paypal.readthedocs.io/en/stable/) - Used as the checkout payment method
-* [javascript] (https://www.javascript.com/) - Used for front-end development
-* [Bootstrap4] (https://pypi.org/project/django-bootstrap4/) - Elegant look
-* [PostgreSQL] (https://www.postgresql.org/docs/) Relational Database Used
+* [django-paypal](https://django-paypal.readthedocs.io/en/stable/) - Used as the checkout payment method
+* [javascript](https://www.javascript.com/) - Used for front-end development
+* [Bootstrap4](https://pypi.org/project/django-bootstrap4/) - Elegant look
+* [PostgreSQL](https://www.postgresql.org/docs/) Relational Database Used
 
 To install the project follow these steps:
 
