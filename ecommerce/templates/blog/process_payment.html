@@ -1,0 +1,13 @@
+{% extends 'ecommerce/base.html'%}
+
+{% block title%}Make Payments{% endblock %}
+
+{% block content%}
+<div class="container">
+   <div class="jumbotron">
+      <h1>Welcome to the checkout Page!</h1>
+      <h4>Pay With PayPal</h4>
+      {{form.render}}
+   </div>
+</div>
+{% endblock %}

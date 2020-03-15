@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.db import models
 
 # Create your models here.
@@ -5,12 +6,19 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=191)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=200, db_index=True)
     description = models.TextField()
     image = models.ImageField(upload_to='products_images/', blank=True)
 
+    class Meta:
+        ordering = ('name',)    
+
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('ecommerce:show_product',
+                        args=[self.product_id, self.product_slug])    
 
 
 class CartItem(models.Model):

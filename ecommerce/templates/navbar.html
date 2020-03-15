@@ -1,0 +1,66 @@
+<div class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">Masoko Ecommerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item m-auto">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Product</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Cart <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+              <a class="btn btn-success btn-sm ml-3" href="{% url 'show_cart' %}">
+                <i class="fa fa-shopping-cart"></i> Cart
+                <span class="badge badge-light">{{ cart_item_count }}</span>
+            </a>
+                <div class="col-sm-6 col-md-6">
+                    {% if user.is_authenticated %}
+                    <ul>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle btn btn-success btn-md ml-3" data-toggle="dropdown" aria-hidden="true">
+                          <i class="fa fa-user" aria-hidden="true"></i>
+                         </a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li>
+                            <a href="{%url 'index'%}">Home</a>
+                          </li>
+                          <li>
+                            <a href="/accounts/password/change">Change Password</a>
+                          </li>
+                          <li>
+                            <a href="/logout">Logout</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    {% else %}
+                    <li>
+                      <a class='btn btn-default' href="/accounts/login">Login</a>
+                    </li>
+        
+                    {% endif %}
+                  </div>
+                <!-- <a class="btn btn-success btn-sm ml-3" href="{% url 'show_cart' %}">
+                    <i class="fa fa-shopping-cart"></i> Cart
+                    <span class="badge badge-light">{{ cart_item_count }}</span>
+                </a> -->
+                <!-- <a class="btn btn-success btn-md ml-3" href="#">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a> -->
+            </form>
+        </div>
+    </div>
+</div>

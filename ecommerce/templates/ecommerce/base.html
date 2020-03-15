@@ -1,4 +1,4 @@
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -15,19 +15,20 @@
     {% block styles%}
       {% bootstrap_css %}
       <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     {% endblock %}  
 
 </head>
 <body>
-    
-<p>
-    <a href="{% url 'index' %}">All Products</a>
-    <a href="{% url 'show_cart' %}">Cart: {{ cart_item_count }} item</a>
-</p>
+    {% include "navbar.html" %}
 
-{% block content %}
+{% block content %} {% endblock %}
 
-{% endblock %}
+    {% include "footer.html" %}
 
 {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
