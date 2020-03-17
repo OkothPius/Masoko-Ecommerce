@@ -70,3 +70,22 @@ footer {
 footer a {
     color: #f8f9fa!important
 }
+
+.other-products img {
+width: 350px;
+height: 270px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.other-products {
+margin: 0 40px 20px 40px;
+}
+
+.other-projects img {
+    width: 350px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
