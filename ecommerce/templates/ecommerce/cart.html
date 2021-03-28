@@ -25,16 +25,19 @@
             <tr>
                 <td>{{ item.product.name }}</td>
                 <td>{{ item.price }}</td>
+                
                 <td>
                     <form action="" method="post">
                         {% csrf_token %}
                         <input type="text" name="quantity" value="{{ item.quantity }}">
                         <input type="hidden" name="item_id" value="{{ item.id }}">
                 </td>
+
                 <td>
                         <input type="submit" name="submit" value="Update">
                     </form>
                 </td>
+
                 <td>
                     <form action="" method="post">
                         {% csrf_token %}
@@ -42,6 +45,7 @@
                         <input type="submit" name="submit" value="Remove">
                     </form>
                 </td>
+                
                 <td>${{ item.total_cost }}</td>
             </tr>
         {% endfor %}
