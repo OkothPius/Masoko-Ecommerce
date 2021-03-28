@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect, \
     get_object_or_404, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from decimal import Decimal
 from paypal.standard.forms import PayPalPaymentsForm
@@ -10,6 +11,7 @@ from .forms import CartForm, CheckoutForm
 from . import cart     
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def index(request):
     all_products = Product.objects.all()
     return render(request, "ecommerce/index.html", {
@@ -18,7 +20,9 @@ def index(request):
 
 
 def show_product(request, product_id, product_slug):
-    product = get_object_or_404(Product, id=product_id)
+    product = get_object_or_404(Product, 
+                                id=product_id,
+                                slug=product_slug)
 
     if request.method == 'POST':
         form = CartForm(request, request.POST)
@@ -48,6 +52,20 @@ def show_cart(request):
                                             'cart_items': cart_items,
                                             'cart_subtotal': cart_subtotal,
                                             })
+
+
+def search_results(request):
+
+    if 'product' in request.GET and request.GET["product"]:
+        search_term = request.GET.get("product")
+        searched_articles = Article.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-news/search.html',{"message":message,"articles": searched_articles})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-news/search.html',{"message":message})
 
 
 def checkout(request):

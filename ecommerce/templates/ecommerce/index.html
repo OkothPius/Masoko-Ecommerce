@@ -1,19 +1,21 @@
 {% extends 'ecommerce/base.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
+<div class="container-fluid">
+<h3 class="text-center">Available Products</h3>
+<hr class="text-muted">
 
-<div class="container">
-    <div class="row">
-        <h2>Available Products</h2>
-
-        {% for product in all_products %}
-        <div class="col-lg-4">
+<div class="product row">
+    {% for product in all_products %}
+    <div class="other-products col-md-3">
+        <img class="landing-page" src="{{product.image.url}}" class="img-responsive" alt="Image">
+        <div class="project-text">
             <h3><a href="{% url 'product_detail' product.pk product.slug %}">{{ product.name }}</a></h3>
-            <p>Price ${{ product.price }}</p>
+            <a href="" class="btn btn-primary" role="button">Price ${{ product.price}}</a>
         </div>
-        {% endfor %}
-        
     </div>
+    {% endfor%}
 </div>
-
+</div>
 {% endblock %}

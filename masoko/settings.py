@@ -27,7 +27,7 @@ SECRET_KEY = '0k0i11p!6aabn9hshh^4!mmc(*h60y)&+aee-3nrh40=qi(741'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ecommerce',
-    'bootstrap3',
+    'bootstrap4',
     'paypal.standard.ipn',
 ]
 
@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'ecommerce.context_processor.cart_item_count',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -81,8 +82,10 @@ WSGI_APPLICATION = 'masoko.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'masoko',
+        'USER': 'oruko',
+        'PASSWORD': 'orukopius',
     }
 }
 
@@ -128,7 +131,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
-PAYPAL_RECEIVER_EMAIL ='sb-f1xuh1145763@business.example.com'
+PAYPAL_RECEIVER_EMAIL ='sb-q043mn943298@business.example.com'
 
 PAYPAL_TEST = True
 
