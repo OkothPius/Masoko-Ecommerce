@@ -28,6 +28,10 @@ media
 .Python
 .vscode
 build/
+venv/
+.venv
+virtual/
+.virtual
 develop-eggs/
 dist/
 downloads/
