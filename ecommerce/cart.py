@@ -12,10 +12,11 @@ def _cart_id(request):
 def _generate_cart_id():
     import string, random
     return ''.join([random.choice(string.ascii_letters + string.digits) for _ in range(50)])
-
+    
 
 def get_all_cart_items(request):
     return CartItem.objects.filter(cart_id = _cart_id(request))
+
 
 
 def add_item_to_cart(request):
@@ -82,5 +83,3 @@ def update_item(request):
 def clear(request):
     cart_items = get_all_cart_items(request)
     cart_items.delete()
-
-
