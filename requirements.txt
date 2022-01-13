@@ -6,7 +6,7 @@ confusable-homoglyphs==3.2.0
 Django==1.11.29
 django-bootstrap4==1.1.1
 django-paypal==1.0.0
-django-registration==2.4.1
+django-registration==3.1.2
 idna==2.9
 Pillow==9.0.0
 psycopg2==2.8.4
