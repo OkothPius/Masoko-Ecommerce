@@ -3,7 +3,7 @@ beautifulsoup4==4.8.2
 certifi==2019.11.28
 chardet==3.0.4
 confusable-homoglyphs==3.2.0
-Django==2.2.27
+Django==2.2.28
 django-bootstrap4==1.1.1
 django-paypal==1.0.0
 django-registration==3.1.2
