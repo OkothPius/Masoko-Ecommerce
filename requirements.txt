@@ -8,7 +8,7 @@ django-bootstrap4==1.1.1
 django-paypal==1.0.0
 django-registration==3.1.2
 idna==2.9
-Pillow==9.3.0
+Pillow==10.2.0
 psycopg2==2.8.4
 pytz==2019.3
 requests==2.31.0
